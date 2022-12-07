@@ -1,0 +1,5 @@
+en:
+  plugins:
+    collections:
+      title: Collection List
+      description: "Jump to a specific collecting area:"

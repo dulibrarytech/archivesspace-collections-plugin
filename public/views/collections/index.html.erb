@@ -1,0 +1,24 @@
+<div class="content-pane">
+  <div class="row-fluid">
+    <div class="span9">
+      <div class="record-pane">
+        <h2><%= I18n.t("plugins.collections.title") %></h2>
+        <div class="list-description">
+          <p><%= I18n.t("plugins.collections.description") %></p>
+          <% @areas.each do |k,v| %>
+            <p class="collection-link"><a href="#<%= k %>"><%= v %></a></p>
+          <% end %>
+        </div>
+        <% @areas.each do |k,v| %>
+          <a class="list-header" id="<%= k %>"></a>
+          <h3><%= v %></h3>
+          <% @results[k].each do |result| %>
+            <p class="collection-link"><a href="<%= result['uri'] %>"><%= result['title'] %></a></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" media="all" href="<%= "#{AppConfig[:public_prefix]}assets/stylesheets/collections.css" %>">
